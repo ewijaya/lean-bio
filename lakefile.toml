@@ -1,0 +1,10 @@
+name = "lean-bio"
+version = "0.1.0"
+defaultTargets = ["lean-bio"]
+
+[[lean_lib]]
+name = "LeanBio"
+
+[[lean_exe]]
+name = "lean-bio"
+root = "Main"
