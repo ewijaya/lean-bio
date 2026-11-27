@@ -36,3 +36,13 @@ theorem compStrand_twice (strand : List Base) :
   | nil => rfl
   | cons b rest ih =>
     simp [complementStrand, complement_twice, ih]
+
+-- 6. Example of `sorry` (an unproven placeholder)
+-- Lean still compiles the file, emits a warning, and marks the theorem with `sorryAx`.
+theorem complementStrand_length (strand : List Base) :
+    (complementStrand strand).length = strand.length := by
+  sorry
+
+-- Compare axioms: a real proof vs. a `sorry` proof
+#print axioms compStrand_twice
+#print axioms complementStrand_length
